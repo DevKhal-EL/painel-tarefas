@@ -1,0 +1,40 @@
+<div class="layout">
+  <main class="content">
+    <header class="topbar">
+      <h1>Painel de Tarefas</h1>
+
+      <div class="topbar-right">
+        <span>22 de Maio de 2024</span>
+        <span>10:30</span>
+        <span class="avatar">👤</span>
+      </div>
+    </header>
+
+    <section class="board">
+      <div class="column a-fazer">
+        <h2>À FAZER</h2>
+        <div class="column-body">
+         <app-task-card [tarefa]="tarefas[0]"></app-task-card>
+        </div>
+      </div>
+
+      <div class="column em-andamento">
+        <h2>EM ANDAMENTO</h2>
+        <div class="column-body">
+         <app-task-card [tarefa]="tarefas[0]"></app-task-card>
+        </div>
+      </div>
+
+      <div class="column aguardando">
+        <h2>AGUARDANDO</h2>
+        <div class="column-body">
+          <app-task-card [tarefa]="tarefas[0]"></app-task-card>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © 2024 Sua Empresa. Todos os direitos reservados.
+    </footer>
+  </main>
+</div>
