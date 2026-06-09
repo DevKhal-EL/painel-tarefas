@@ -4,29 +4,41 @@
       <h1>Painel de Tarefas</h1>
 
       <div class="topbar-right">
-        <span>22 de Maio de 2024</span>
-        <span>10:30</span>
+        <span class="topbar-item">22 de Maio de 2024</span>
+        <span class="topbar-item">10:30</span>
         <span class="avatar">👤</span>
       </div>
     </header>
 
     <section class="board">
       <div class="column a-fazer">
-        <h2>À FAZER</h2>
+        <div class="column-header">
+          <h2>À Fazer</h2>
+          <span class="count count-red">3 tarefas</span>
+        </div>
+
         <div class="column-body">
-         <app-task-card [tarefa]="tarefas[0]"></app-task-card>
+          <app-task-card [tarefa]="tarefas[0]"></app-task-card>
         </div>
       </div>
 
       <div class="column em-andamento">
-        <h2>EM ANDAMENTO</h2>
+        <div class="column-header">
+          <h2>Em Andamento</h2>
+          <span class="count count-yellow">3 tarefas</span>
+        </div>
+
         <div class="column-body">
-         <app-task-card [tarefa]="tarefas[0]"></app-task-card>
+          <app-task-card [tarefa]="tarefas[0]"></app-task-card>
         </div>
       </div>
 
       <div class="column aguardando">
-        <h2>AGUARDANDO</h2>
+        <div class="column-header">
+          <h2>Aguardando</h2>
+          <span class="count count-green">3 tarefas</span>
+        </div>
+
         <div class="column-body">
           <app-task-card [tarefa]="tarefas[0]"></app-task-card>
         </div>
