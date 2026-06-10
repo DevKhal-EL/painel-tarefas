@@ -16,6 +16,73 @@
     <span class="status">
       {{ tarefa.status === 'a_fazer' ? 'À Fazer' : tarefa.status === 'em_andamento' ? 'Em Andamento' : 'Aguardando' }}
     </span>
+    
+  </div>
+</div>
+
+<div class="task-card">
+  <h3>{{ tarefa.titulo }}</h3>
+
+  <div class="task-meta">
+    <span>{{ tarefa.data }}</span>
+    <span>{{ tarefa.responsavel }}</span>
+  </div>
+
+  <div class="task-separator"></div>
+
+  <div class="task-footer">
+    <span class="priority" [ngClass]="tarefa.prioridade">
+      {{ tarefa.prioridade === 'alta' ? 'Alta' : tarefa.prioridade === 'media' ? 'Média' : 'Baixa' }}
+    </span>
+
+    <span class="status">
+      {{ tarefa.status === 'a_fazer' ? 'À Fazer' : tarefa.status === 'em_andamento' ? 'Em Andamento' : 'Aguardando' }}
+    </span>
+    
+  </div>
+</div>
+
+<div class="task-card">
+  <h3>{{ tarefa.titulo }}</h3>
+
+  <div class="task-meta">
+    <span>{{ tarefa.data }}</span>
+    <span>{{ tarefa.responsavel }}</span>
+  </div>
+
+  <div class="task-separator"></div>
+
+  <div class="task-footer">
+    <span class="priority" [ngClass]="tarefa.prioridade">
+      {{ tarefa.prioridade === 'alta' ? 'Alta' : tarefa.prioridade === 'media' ? 'Média' : 'Baixa' }}
+    </span>
+
+    <span class="status">
+      {{ tarefa.status === 'a_fazer' ? 'À Fazer' : tarefa.status === 'em_andamento' ? 'Em Andamento' : 'Aguardando' }}
+    </span>
+    
+  </div>
+</div>
+
+<div class="task-card">
+  <h3>{{ tarefa.titulo }}</h3>
+
+  <div class="task-meta">
+    <span>{{ tarefa.data }}</span>
+    <span>{{ tarefa.responsavel }}</span>
+  </div>
+
+  <div class="task-separator"></div>
+
+  <div class="task-footer">
+    <span class="priority" [ngClass]="tarefa.prioridade">
+      {{ tarefa.prioridade === 'alta' ? 'Alta' : tarefa.prioridade === 'media' ? 'Média' : 'Baixa' }}
+    </span>
+
+    <span class="status">
+      {{ tarefa.status === 'a_fazer' ? 'À Fazer' : tarefa.status === 'em_andamento' ? 'Em Andamento' : 'Aguardando' }}
+    </span>
+    
   </div>
 </div>
 
