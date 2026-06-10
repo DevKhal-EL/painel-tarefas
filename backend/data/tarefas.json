@@ -1,0 +1,20 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "titulo": "Revisar documentação",
+      "prioridade": "alta",
+      "data": "28/05/2024",
+      "responsavel": "Khalel",
+      "status": "a_fazer"
+    },
+    {
+      "id": 2,
+      "titulo": "Aguardar aprovação do cliente",
+      "prioridade": "media",
+      "data": "29/05/2024",
+      "responsavel": "Khalel",
+      "status": "aguardando"
+    }
+  ]
+}
