@@ -42,7 +42,20 @@ src/
 
 ## Como Executar
 
-### Instalar dependências
+### Verificar se Node.js e npm estão instalados:
+
+```bash
+node --version
+npm --version
+```
+
+### Instale o Angular CLI globalmente:
+
+```bash
+npm install -g @angular/cli
+```
+
+### Instalar dependências:
 
 ```bash
 npm install
