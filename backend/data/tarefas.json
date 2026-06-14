@@ -15,6 +15,14 @@
       "data": "29/05/2024",
       "responsavel": "Khalel",
       "status": "aguardando"
+    },
+    {
+      "id": 2,
+      "titulo": "Aguardar aprovação do cliente",
+      "prioridade": "media",
+      "data": "29/05/2024",
+      "responsavel": "Khalel",
+      "status": "em_andamento"
     }
   ]
 }

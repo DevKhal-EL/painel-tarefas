@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-const tarefasPath = path.join(__dirname, 'data', 'tarefas.json');
+const tarefasPath = path.join(__dirname, 'tarefas.json');
 
 app.use(cors());
 app.use(express.json());

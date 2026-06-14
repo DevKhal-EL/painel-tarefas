@@ -136,3 +136,29 @@
   font-size: 14px;
   padding: 2px 0 6px;
 }
+
+.empty {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.task-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.task-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.task-card p {
+  margin: 4px 0;
+  color: #64748b;
+  font-size: 13px;
+}

@@ -10,40 +10,30 @@
       </div>
     </header>
 
-    <section class="board">
-      <div class="column a-fazer">
-        <div class="column-header">
-          <h2>À Fazer</h2>
-          <span class="count count-red">3 tarefas</span>
-        </div>
-
-        <div class="column-body">
-          <app-task-card [tarefa]="tarefas[0]"></app-task-card>
-        </div>
+       <section class="board">
+  @for (coluna of colunas; track coluna.status) {
+    <div [class]="'column ' + coluna.classe">
+      <div class="column-header">
+        <h2>{{ coluna.titulo }}</h2>
+        <span [class]="'count ' + coluna.badge">
+          {{ tarefasPorStatus(coluna.status).length }} tarefas
+        </span>
       </div>
 
-      <div class="column em-andamento">
-        <div class="column-header">
-          <h2>Em Andamento</h2>
-          <span class="count count-yellow">3 tarefas</span>
-        </div>
-
-        <div class="column-body">
-          <app-task-card [tarefa]="tarefas[0]"></app-task-card>
-        </div>
+      <div class="column-body">
+        @for (tarefa of tarefasPorStatus(coluna.status); track tarefa.id) {
+          <article class="task-card">
+            <h3>{{ tarefa.titulo }}</h3>
+            <p>📅 {{ tarefa.data }}</p>
+            <p>👤 {{ tarefa.responsavel }}</p>
+          </article>
+        } @empty {
+          <p class="empty">Sem tarefas por enquanto.</p>
+        }
       </div>
-
-      <div class="column aguardando">
-        <div class="column-header">
-          <h2>Aguardando</h2>
-          <span class="count count-green">3 tarefas</span>
-        </div>
-
-        <div class="column-body">
-          <app-task-card [tarefa]="tarefas[0]"></app-task-card>
-        </div>
-      </div>
-    </section>
+    </div>
+  }
+</section>
 
     <footer class="footer">
       © 2024 Sua Empresa. Todos os direitos reservados.

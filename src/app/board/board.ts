@@ -1,41 +1,43 @@
-import { Component } from '@angular/core';
-import { TaskCard } from '../task-card/task-card';
+import { Component, OnInit } from '@angular/core';
 import { Task } from '../task.model';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [TaskCard],
+  imports: [],
   templateUrl: './board.html',
   styleUrl: './board.scss',
 })
-export class Board {
+export class Board implements OnInit {
+  tarefas: Task[] = [];
 
-  tarefas: Task[] = [
-    {
-      id: 1,
-      titulo: 'Reunião com cliente',
-      prioridade: 'media',
-      data: '23/05/2024',
-      responsavel: 'Lucas Almeida',
-      status: 'a_fazer',
-    },
-    {
-      id: 2,
-      titulo: 'Desenvolver tela de login',
-      prioridade: 'alta',
-      data: '22/05/2024',
-      responsavel: 'João Ferreira',
-      status: 'em_andamento',
-    },
-        {
-      id: 1,
-      titulo: 'Aprovação de layout',
-      prioridade: 'media',
-      data: '28/05/2024',
-      responsavel: 'Fernanda Oliveira',
-      status: 'aguardando',
-    },
+  colunas = [
+    { titulo: 'À Fazer', status: 'a_fazer' as const, classe: 'a-fazer', badge: 'count-red' },
+    { titulo: 'Em Andamento', status: 'em_andamento' as const, classe: 'em-andamento', badge: 'count-yellow' },
+    { titulo: 'Aguardando', status: 'aguardando' as const, classe: 'aguardando', badge: 'count-green' },
   ];
 
+  constructor(private taskService: TaskService) {}
+
+  ngOnInit(): void {
+    this.carregarTarefas();
+  }
+
+  carregarTarefas(): void {
+    this.taskService.getTarefas().subscribe({
+      next: (resposta) => {
+        console.log('Resposta da API:', resposta);
+        this.tarefas = resposta.tarefas;
+        console.log('Tarefas carregadas:', this.tarefas);
+      },
+      error: (erro) => {
+        console.error('Erro ao buscar tarefas:', erro);
+      },
+    });
+  }
+
+  tarefasPorStatus(status: Task['status']) {
+    return this.tarefas.filter((tarefa) => tarefa.status === status);
+  }
 }
